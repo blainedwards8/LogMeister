@@ -8,10 +8,10 @@ app.use(express.urlencoded({extended: true}));
 app.post('/login', require('./controllers/routes/login'));
 
 /* AUTHENTICATED AREA */
-app.use(require('./middleware/auth'));
+app.use(require('./controllers/middleware/auth'));
 
-app.use(require('./controllers/logs'));
-app.use(require('./controllers/users'));
-app.use(require('./controllers/apps'));
+app.use(require('./controllers/LogsController'));
+app.use(require('./controllers/UsersController'));
+app.use(require('./controllers/AppsController'));
 
 module.exports = app;
